@@ -1,0 +1,26 @@
+def lista_de_tarefas():
+    tarefas = []
+
+    while True:
+        print("\n=== Lista de Tarefas ===")
+        print("1. Adicionar Tarefa")
+        print("2. Listar Tarefas")
+        print("0. Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            tarefa = input("Digite a tarefa a ser adicionada: ")
+            tarefas.append(tarefa)
+            print("Tarefa adicionada com sucesso!")
+        elif opcao == "2":
+            print("\n--- Tarefas ---")
+            for t in tarefas:
+                print("- " + t)
+        elif opcao == "0":
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida!")
+
+lista_de_tarefas()

@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ListaDeTarefas {
+    public static void main(String[] args) {
+        ArrayList<String> tarefas = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        String opcao;
+
+        do {
+            System.out.println("\n=== Lista de Tarefas ===");
+            System.out.println("1. Adicionar Tarefa");
+            System.out.println("2. Listar Tarefas");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextLine();
+
+            switch (opcao) {
+                case "1":
+                    System.out.print("Digite a tarefa a ser adicionada: ");
+                    String tarefa = scanner.nextLine();
+                    tarefas.add(tarefa);
+                    System.out.println("Tarefa adicionada com sucesso!");
+                    break;
+                case "2":
+                    System.out.println("\n--- Tarefas ---");
+                    for (String t : tarefas) {
+                        System.out.println("- " + t);
+                    }
+                    break;
+                case "0":
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        } while (!opcao.equals("0"));
+    }
+}
